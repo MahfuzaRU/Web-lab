@@ -5,7 +5,7 @@
 
 
     <h1>Book List</h1>
-    <table border="2">
+    <table class="table table-striped-columns">
         <tr>
             <th>Id</th>
             <th>Title</th>
