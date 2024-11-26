@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+    Show Book
+@endsection
 
 
 @section('page-content')

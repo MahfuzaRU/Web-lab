@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+    Home
+@endsection
 
 
 @section('page-content')
@@ -26,4 +29,6 @@
 
         @endforeach
     </table>
+
+    {{ $books->links() }}
 @endsection
