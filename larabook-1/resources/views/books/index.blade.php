@@ -22,7 +22,8 @@
             <td>{{ $book->title }}</td>
             <td>{{ $book->author }}</td>
             <td>{{ $book->price }}</td>
-            <td><a href="">view</a></td>
+            <td><a href="{{url('books/'.$book->id.'/show') }}">view</a></td>
+            {{-- <td><a href="{{route('books.show',$book->id) }}">view</a></td> --}}
 
         </tr>
 
