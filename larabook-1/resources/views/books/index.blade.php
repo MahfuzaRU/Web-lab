@@ -7,7 +7,19 @@
 @section('page-content')
 <div class="row mt-2">
     <div class="col-lg-8">
-        Search Functionality
+
+        <form method="GET" action="{{ route('books.index') }}">
+            <div class="row g-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+              </div>
+
+
+        </form>
     </div>
     <div class="col-lg-2">
         <p class="text-end">
