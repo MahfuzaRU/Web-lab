@@ -5,18 +5,20 @@
 
 
 @section('page-content')
+
+
 <div class="row mt-2">
     <div class="col-lg-8">
 
         <form method="GET" action="{{ route('books.index') }}">
             <div class="row g-3">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                <input type="text" name="search" class="form-control" placeholder="Search" value="{{ request('search') }}">
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-success">Search</button>
                 </div>
-              </div>
+            </div>
 
 
         </form>
