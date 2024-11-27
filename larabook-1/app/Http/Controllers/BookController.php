@@ -27,6 +27,7 @@ class BookController extends Controller
             'isbn' => 'required|digits:13',
             'stock' => 'required|int|min:0',
             'price' => 'required|numeric|min:0',
+            // 'price' => ['required','numeric','min:0'],
         ];
 // for validation
         $request -> validate($rules);
@@ -45,8 +46,37 @@ class BookController extends Controller
         return redirect()->route('books.show', $book->id);
 
 
+    }
+    public function edit($id){
+        $book = Book::findOrFail($id);
 
-}
+        return view('books.edit')->with('book',$book);
+    }
+    public function update(Request $request){
+
+        $rules=[
+            'title' => 'required',
+            'author' => 'required',
+            'isbn' => 'required|digits:13',
+            'stock' => 'required|int|min:0',
+            'price' => 'required|numeric|min:0',
+
+        ];
+
+        $request -> validate($rules);
+
+        $book = Book::findOrFail($request->id);
+
+        $book ->title = $request->title;
+        $book ->author = $request->author;
+        $book ->isbn = $request->isbn;
+        $book ->stock = $request->stock;
+        $book ->price = $request->price;
+        $book->save();
+
+        return redirect()->route('books.show', $book->id);
+
+    }
 
 
 }

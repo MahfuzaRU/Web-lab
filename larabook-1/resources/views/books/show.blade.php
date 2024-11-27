@@ -45,6 +45,13 @@
             <th>Updated at</th>
             <td>{{ $book->updated_at}}</td>
         </tr>
+        <tr>
+            <th></th>
+            <td>
+                <a class="btn btn-danger" href="{{ route('books.edit', $book->id) }}">Edit</a>
+
+            </td>
+        </tr>
 
     </table>
 
