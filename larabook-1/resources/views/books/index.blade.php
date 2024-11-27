@@ -41,6 +41,15 @@
             <td>
                 <a href="{{route('books.edit',$book->id) }}">Edit</a>
             </td>
+            <td>
+                <form method="POST" action="{{ route('books.destroy') }}" onsubmit="return confirm('Are you sure ')">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" name="id" value="{{ $book->id }}">
+                    <input type="submit" value="Delete" class="btn btn btn-link">
+
+                </form>
+            </td>
 
 
         </tr>
