@@ -16,4 +16,10 @@ class BookController extends Controller
         $book = Book ::find($id);
         return view('books.show')->with('book',$book);
     }
+    public function create(){
+        return view('books.create');
+    }
+    public function store(Request $request){
+        dd($request->all());
+    }
 }

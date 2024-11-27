@@ -5,6 +5,17 @@
 
 
 @section('page-content')
+<div class="row mt-2">
+    <div class="col-lg-8">
+        Search Functionality
+    </div>
+    <div class="col-lg-2">
+        <p class="text-end">
+            <a href="{{ route('books.create') }}" class="btn btn-primary">new book</a>
+
+        </p>
+    </div>
+</div>
 
 
     <h1>Book List</h1>
