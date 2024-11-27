@@ -20,6 +20,33 @@ class BookController extends Controller
         return view('books.create');
     }
     public function store(Request $request){
-        dd($request->all());
-    }
+        //dd($request->all());
+        $rules=[
+            'title' => 'required',
+            'author' => 'required',
+            'isbn' => 'required|digits:13',
+            'stock' => 'required|int|min:0',
+            'price' => 'required|numeric|min:0',
+        ];
+// for validation
+        $request -> validate($rules);
+        // return 'all data is valid';
+
+        $book = new Book();
+
+        $book ->title = $request->title;
+        $book ->author = $request->author;
+        $book ->isbn = $request->isbn;
+        $book ->stock = $request->stock;
+        $book ->price = $request->price;
+        $book->save();
+
+        // return redirect()->route('books.index');
+        return redirect()->route('books.show', $book->id);
+
+
+
+}
+
+
 }
